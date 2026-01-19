@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyqqgordmh7pa"]
+
+[ext_resource type="Script" uid="uid://df3ftfeecjebr" path="res://scripts/meteor.gd" id="1_pxso2"]
+[ext_resource type="Texture2D" uid="uid://6k8hd2feo7kg" path="res://graphics/meteors/asteroid.png" id="1_tcwo0"]
+
+[node name="Meteor" type="Node2D" node_paths=PackedStringArray("astroid")]
+script = ExtResource("1_pxso2")
+astroid = NodePath(".")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tcwo0")
