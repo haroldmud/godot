@@ -4,7 +4,7 @@ const SPEED = 124.0
 
 var direction := Vector2.RIGHT
 var scale_multiplier := 1.2
-var scale_s
+var scale_speed := 8.0
 var original_scale: Vector2
 @onready var player: Node2D = $"."
 @onready var playerNode := $PlayerImage
@@ -16,10 +16,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var target_scale: Vector2
 	if Input.is_action_pressed("jump_over_meteor"):
-		playerNode.scale = original_scale * scale_multiplier
+		target_scale = original_scale * scale_multiplier
 	else :
-		playerNode.scale = original_scale
+		target_scale = original_scale
+		
+	playerNode.scale = playerNode.scale.lerp(target_scale, scale_speed * delta)
 	var input_direction := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	position += input_direction * SPEED * delta # the position is a built-in variable from the NODE2D
 	keep_player_inside_screen()
