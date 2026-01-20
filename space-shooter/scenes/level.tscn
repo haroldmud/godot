@@ -8,13 +8,14 @@
 
 [node name="BG" type="Sprite2D" parent="."]
 modulate = Color(0.47709888, 0.47709894, 0.47709888, 1)
-position = Vector2(1898, 1047)
+position = Vector2(573.49994, 319)
+scale = Vector2(0.28546795, 0.27557412)
 texture = ExtResource("1_w8frs")
 
 [node name="Player" parent="." instance=ExtResource("2_mx8sn")]
-position = Vector2(1911, 1950)
-scale = Vector2(0.7, 0.7)
+position = Vector2(593, 576)
+scale = Vector2(0.205, 0.205)
 
 [node name="Meteor" parent="." instance=ExtResource("3_ppgk2")]
-position = Vector2(785, 310)
-scale = Vector2(3, 3)
+position = Vector2(156.00006, 110)
+scale = Vector2(0.93, 0.93)

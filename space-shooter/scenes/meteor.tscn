@@ -7,5 +7,5 @@
 script = ExtResource("1_pxso2")
 astroid = NodePath(".")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Asteroid" type="Sprite2D" parent="."]
 texture = ExtResource("1_tcwo0")
