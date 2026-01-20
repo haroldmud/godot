@@ -3,10 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://oafvnxs7fu6" path="res://graphics/ships/space-ship.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://jclptker23gi" path="res://scripts/Player.gd" id="1_g2els"]
 
-[node name="Player" type="Node2D" node_paths=PackedStringArray("game_player")]
+[node name="Player" type="Node2D"]
 position = Vector2(-2, -8)
 script = ExtResource("1_g2els")
-game_player = NodePath(".")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
 position = Vector2(2, 8)
