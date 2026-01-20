@@ -9,7 +9,7 @@ var direction := Vector2.RIGHT
 
 # we won't need this since we already have teh @onready annotations.
 func _ready() -> void:
-	pass # Replace with function body.
+	position = Vector2(100, 200)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
