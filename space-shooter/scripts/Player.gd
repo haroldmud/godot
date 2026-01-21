@@ -35,5 +35,4 @@ func keep_player_inside_screen() -> void:
 	
 	position.x = clamp(position.x, half_size.x/4, screen_size.x - (half_size.x)/4)
 	position.y = clamp(position.y, half_size.y/4, screen_size.y - (half_size.y)/4)
-	print(half_size)
 	

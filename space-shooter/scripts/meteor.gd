@@ -14,3 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += Vector2(0, 1) * 50 * SPEED * delta
 	asteroid.rotate(10.0 * delta)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	print("the collision has happenned") # Replace with function body.
