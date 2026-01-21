@@ -3,10 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://oafvnxs7fu6" path="res://graphics/ships/space-ship.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://jclptker23gi" path="res://scripts/Player.gd" id="1_g2els"]
 
-[node name="Player" type="Node2D"]
-position = Vector2(-2, -8)
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
-position = Vector2(2, 8)
 texture = ExtResource("1_3vyb7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-35, -224, 34, -224, 51, -172, 42, -162, 60, -12, 77, -5, 77, 14, 123, 27, 124, 0, 177, 0, 179, 44, 232, 57, 234, 18, 259, 18, 258, 127, 234, 128, 232, 112, 216, 117, 215, 232, 188, 231, 186, 199, 84, 164, 61, 222, -59, 223, -83, 165, -186, 201, -186, 222, -203, 231, -220, 218, -219, 117, -232, 113, -233, 128, -263, 128, -262, 21, -233, 20, -232, 53, -181, 39, -180, 3, -120, 1, -119, 17, -82, 9, -82, -9, -69, -18, -60, -24, -43, -164, -52, -179)

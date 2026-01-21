@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 const SPEED = 124.0
 
@@ -24,7 +24,8 @@ func _process(delta: float) -> void:
 		
 	playerNode.scale = playerNode.scale.lerp(target_scale, scale_speed * delta)
 	var input_direction := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	position += input_direction * SPEED * delta # the position is a built-in variable from the NODE2D
+	velocity = input_direction * SPEED # the position is a built-in variable from the NODE2D
+	move_and_slide()
 	keep_player_inside_screen()
 
 
