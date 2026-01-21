@@ -13,9 +13,13 @@ scale = Vector2(0.28546795, 0.27557412)
 texture = ExtResource("1_w8frs")
 
 [node name="Meteor" parent="." instance=ExtResource("3_ppgk2")]
-position = Vector2(156.00006, 110)
+position = Vector2(132, 99)
 scale = Vector2(0.93, 0.93)
 
 [node name="Player" parent="." instance=ExtResource("2_mx8sn")]
 position = Vector2(593, 576)
 scale = Vector2(0.205, 0.205)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="Meteor" method="_on_timer_timeout"]

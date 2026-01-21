@@ -6,11 +6,11 @@
 rotation = 0.00992174
 
 [node name="LaserImage" type="Sprite2D" parent="."]
-position = Vector2(-550.8638, -1394.6033)
+position = Vector2(-15.752502, -982.89197)
 rotation = -1.5707964
 texture = ExtResource("1_gf172")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-550.8638, -1394.6033)
+position = Vector2(-15.683105, -975.89233)
 rotation = -1.5707964
 polygon = PackedVector2Array(1022.6145, 56.856873, -673.2229, 81.68344, -669.2231, 81.64377, -768.3054, 174.63135, -768.3054, 174.63135, -943.46545, 159.36847, -909.97534, 7.0286865, -921.3142, -127.86548, -750.4119, -138.56158, -661.55304, -52.438965, 1025.8601, -19.179077, 1039.2366, 18.690125)
