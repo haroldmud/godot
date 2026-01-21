@@ -18,8 +18,10 @@ scale = Vector2(0.93, 0.93)
 
 [node name="Player" parent="." instance=ExtResource("2_mx8sn")]
 position = Vector2(593, 576)
-scale = Vector2(0.205, 0.205)
+scale = Vector2(0.21, 0.21)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 
-[connection signal="timeout" from="Timer" to="Meteor" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 124.0
+const SPEED = 324.0
 
 var direction := Vector2.RIGHT
 var scale_multiplier := 1.2
@@ -8,11 +8,13 @@ var scale_speed := 8.0
 var original_scale: Vector2
 @onready var player: Node2D = $"."
 @onready var playerNode := $PlayerImage
+@onready var laser := $laser/LaserImage
+var target_rotation = 0.0
 # we won't need this since we already have teh @onready annotations.
 func _ready() -> void:
 	position = Vector2(580, 700)
 	original_scale = playerNode.scale
-
+	laser.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,13 +23,25 @@ func _process(delta: float) -> void:
 		target_scale = original_scale * scale_multiplier
 	else :
 		target_scale = original_scale
-		
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		laser.visible = true
+	else:
+		laser.visible = false
+	 
 	playerNode.scale = playerNode.scale.lerp(target_scale, scale_speed * delta)
 	var input_direction := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	velocity = input_direction * SPEED # the position is a built-in variable from the NODE2D
 	move_and_slide()
 	keep_player_inside_screen()
-
+	if Input.is_action_pressed("move_left") and Input.is_action_pressed("shift"):
+		target_rotation = deg_to_rad(-45)
+	elif Input.is_action_pressed("move_right") and Input.is_action_pressed("shift"):
+		target_rotation = deg_to_rad(45)
+	else:
+		target_rotation = 0.0
+	rotation = lerp(rotation, target_rotation, 8.0 * delta)
+		
 
 func keep_player_inside_screen() -> void:
 	var screen_size := get_viewport_rect().size
@@ -36,3 +50,7 @@ func keep_player_inside_screen() -> void:
 	position.x = clamp(position.x, half_size.x/4, screen_size.x - (half_size.x)/4)
 	position.y = clamp(position.y, half_size.y/4, screen_size.y - (half_size.y)/4)
 	
+
+
+func _on_timer_timeout() -> void:
+	print("Meteor")
