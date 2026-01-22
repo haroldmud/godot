@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbyp1xwa5d3e1"]
+[gd_scene load_steps=5 format=3 uid="uid://cbyp1xwa5d3e1"]
 
+[ext_resource type="Script" uid="uid://df2po7qljpmrc" path="res://scenes/level.gd" id="1_mx8sn"]
 [ext_resource type="Texture2D" uid="uid://ch54yinbyorod" path="res://graphics/other/bg.webp" id="1_w8frs"]
 [ext_resource type="PackedScene" uid="uid://wps0hpecyxnr" path="res://scenes/player.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://cyqqgordmh7pa" path="res://scenes/meteor.tscn" id="3_ppgk2"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_mx8sn")
 
 [node name="BG" type="Sprite2D" parent="."]
 modulate = Color(0.47709888, 0.47709894, 0.47709888, 1)
@@ -23,5 +25,3 @@ scale = Vector2(0.21, 0.21)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
-
-[connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]
