@@ -17,3 +17,7 @@ scale = Vector2(0.48, 0.48)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(2, -8)
 polygon = PackedVector2Array(-40, -218, 36, -217, 49, -167, 41, -155, 59, -4, 73, 2, 76, 22, 120, 35, 121, 14, 176, 14, 178, 53, 232, 66, 232, 32, 256, 32, 256, 132, 234, 133, 233, 116, 213, 121, 211, 232, 191, 231, 188, 206, 79, 167, 61, 222, -59, 223, -81, 166, -192, 206, -193, 225, -205, 234, -216, 225, -216, 122, -236, 116, -238, 133, -259, 133, -260, 40, -250, 31, -236, 36, -236, 67, -182, 54, -181, 14, -125, 13, -125, 37, -79, 23, -78, 4, -64, -4, -46, -154, -53, -166)
+
+[node name="LaserTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]

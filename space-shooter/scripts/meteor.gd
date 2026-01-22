@@ -18,3 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	print("the collision has happenned") # Replace with function body.
+
+
+func _on_area_entered(area: Area2D) -> void:
+	print("the laser has been shot")
