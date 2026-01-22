@@ -23,7 +23,7 @@ position = Vector2(132, 99)
 scale = Vector2(0.93, 0.93)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.658
 autostart = true
 
 [node name="meteors" type="Node2D" parent="."]

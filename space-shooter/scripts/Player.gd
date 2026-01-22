@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 324.0
+const SPEED = 500.0
 
 var direction := Vector2.RIGHT
 var scale_multiplier := 1.2
@@ -8,6 +8,7 @@ var scale_speed := 8.0
 var original_scale: Vector2
 @onready var player: Node2D = $"."
 @onready var playerNode := $PlayerImage
+@onready var playerFailed := $PlayerImageFail
 @onready var laser := $laser/LaserImage
 @onready var laserBody :CollisionPolygon2D = $laser/CollisionPolygon2D
 @onready var laserTimer :Timer = $LaserTimer
@@ -19,6 +20,7 @@ func _ready() -> void:
 	original_scale = playerNode.scale
 	laser.visible = false
 	laserBody.disabled = true
+	playerFailed.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -58,7 +60,7 @@ func _on_laser_timer_timeout() -> void:
 
 func keep_player_inside_screen() -> void:
 	var screen_size := get_viewport_rect().size
+
 	var half_size: Vector2 = (playerNode.texture.get_size() * playerNode.scale) / 2
-	
 	position.x = clamp(position.x, half_size.x/4, screen_size.x - (half_size.x)/4)
 	position.y = clamp(position.y, half_size.y/4, screen_size.y - (half_size.y)/4)
