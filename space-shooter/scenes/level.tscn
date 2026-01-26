@@ -28,4 +28,6 @@ autostart = true
 
 [node name="meteors" type="Node2D" parent="."]
 
+[node name="bullets" type="Node2D" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]
