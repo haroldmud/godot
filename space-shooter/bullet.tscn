@@ -6,3 +6,7 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_v7oki")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -1)
+polygon = PackedVector2Array(-28, -19, -26, -9, -65, -2, -65, 3, -25, 10, -27, 18, -26, 21, -1, 18, 1, 16, 2, 13, 49, 13, 62, 7, 65, 4, 65, -3, 61, -6, 48, -11, 3, -12, 1, -15, -3, -17)
