@@ -30,4 +30,5 @@ autostart = true
 
 [node name="bullets" type="Node2D" parent="."]
 
+[connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]

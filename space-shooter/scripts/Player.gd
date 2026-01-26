@@ -12,7 +12,10 @@ var original_scale: Vector2
 @onready var laser := $laser/LaserImage
 @onready var laserBody :CollisionPolygon2D = $laser/CollisionPolygon2D
 @onready var laserTimer :Timer = $LaserTimer
+var can_shoot :bool = true
+var init_shoot := 0
 var target_rotation = 0.0
+signal bullet(pos)
 
 # we won't need this since we already have teh @onready annotations.
 func _ready() -> void:
@@ -20,11 +23,20 @@ func _ready() -> void:
 	original_scale = playerNode.scale
 	laser.visible = false
 	laserBody.disabled = true
-	playerFailed.visible = true
+	playerFailed.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var target_scale: Vector2
+	var target_scale: Vector2		
+		
+	if Input.is_action_just_pressed("bullet") and can_shoot and init_shoot < 10:
+		bullet.emit($BulletStartPosition.global_position)
+		init_shoot +=1
+		print(init_shoot)
+		if init_shoot == 10:
+			can_shoot = false
+			$BulletTimer.start()
+
 	if Input.is_action_pressed("jump_over_meteor"):
 		target_scale = original_scale * scale_multiplier
 	else :
@@ -64,3 +76,10 @@ func keep_player_inside_screen() -> void:
 	var half_size: Vector2 = (playerNode.texture.get_size() * playerNode.scale) / 2
 	position.x = clamp(position.x, half_size.x/4, screen_size.x - (half_size.x)/4)
 	position.y = clamp(position.y, half_size.y/4, screen_size.y - (half_size.y)/4)
+
+
+
+func _on_bullet_timer_timeout() -> void:
+	can_shoot = true
+	init_shoot = 0
+	print(init_shoot)

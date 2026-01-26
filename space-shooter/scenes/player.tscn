@@ -27,4 +27,11 @@ polygon = PackedVector2Array(-40, -218, 36, -217, 49, -167, 41, -155, 59, -4, 73
 light_mask = 2
 texture = ExtResource("4_qlg0r")
 
+[node name="BulletStartPosition" type="Marker2D" parent="."]
+position = Vector2(0, -253)
+gizmo_extents = 0.0
+
+[node name="BulletTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
