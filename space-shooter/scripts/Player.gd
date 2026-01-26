@@ -20,7 +20,7 @@ func _ready() -> void:
 	original_scale = playerNode.scale
 	laser.visible = false
 	laserBody.disabled = true
-	playerFailed.visible = false
+	playerFailed.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
