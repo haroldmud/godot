@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcqgeubb5q5f0"]
+[gd_scene load_steps=3 format=3 uid="uid://dcqgeubb5q5f0"]
 
+[ext_resource type="Script" uid="uid://14fypwj36qgr" path="res://scenes/laser.gd" id="1_a7dhc"]
 [ext_resource type="Texture2D" uid="uid://b618qktsw3viv" path="res://graphics/other/blue_laser.png" id="1_gf172"]
 
 [node name="laser" type="Area2D"]
+light_mask = 2
+visibility_layer = 4
 rotation = 0.00992174
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_a7dhc")
 
 [node name="LaserImage" type="Sprite2D" parent="."]
 position = Vector2(-15.752502, -982.89197)

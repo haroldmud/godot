@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cemvtkl4jq1vy" path="res://graphics/ships/red-space-ship.png" id="4_qlg0r"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]
+light_mask = 2
 texture = ExtResource("2_dqkch")
 
 [node name="laser" parent="." instance=ExtResource("3_qhqgy")]
@@ -22,6 +24,18 @@ polygon = PackedVector2Array(-40, -218, 36, -217, 49, -167, 41, -155, 59, -4, 73
 [node name="LaserTimer" type="Timer" parent="."]
 
 [node name="PlayerImageFail" type="Sprite2D" parent="."]
+light_mask = 2
 texture = ExtResource("4_qlg0r")
 
+[node name="BulletStartPosition" type="Marker2D" parent="."]
+position = Vector2(0, -253)
+gizmo_extents = 0.0
+
+[node name="BulletTimer" type="Timer" parent="."]
+wait_time = 23.987
+one_shot = true
+
+[node name="FailTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
