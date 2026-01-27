@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://0ue70hfjkguc"]
+
+[ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://graphics/other/fonts/subatomic.tsoonami.ttf" id="1_ro3t7"]
+[ext_resource type="Texture2D" uid="uid://dlrxq8y1qkkxn" path="res://graphics/other/icons/love-always-wins.png" id="2_5en4g"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.5
+offset_right = 61.5
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ro3t7")
+theme_override_font_sizes/font_size = 32
+text = "00032"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 128.0
+scale = Vector2(0.21925266, 0.23571323)
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+z_index = 7
+layout_mode = 2
+texture = ExtResource("2_5en4g")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+z_index = 7
+layout_mode = 2
+texture = ExtResource("2_5en4g")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+z_index = 7
+layout_mode = 2
+texture = ExtResource("2_5en4g")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+z_index = 7
+layout_mode = 2
+texture = ExtResource("2_5en4g")
+stretch_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="MarginContainer2/HBoxContainer"]
+z_index = 7
+layout_mode = 2
+texture = ExtResource("2_5en4g")
+stretch_mode = 2
