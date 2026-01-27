@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbyp1xwa5d3e1"]
+[gd_scene load_steps=6 format=3 uid="uid://cbyp1xwa5d3e1"]
 
 [ext_resource type="Script" uid="uid://df2po7qljpmrc" path="res://scripts/level.gd" id="1_mx8sn"]
 [ext_resource type="Texture2D" uid="uid://ch54yinbyorod" path="res://graphics/other/bg.webp" id="1_w8frs"]
 [ext_resource type="PackedScene" uid="uid://wps0hpecyxnr" path="res://scenes/player.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://cyqqgordmh7pa" path="res://scenes/meteor.tscn" id="3_ppgk2"]
-[ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://graphics/other/fonts/subatomic.tsoonami.ttf" id="5_2r41h"]
-[ext_resource type="Texture2D" uid="uid://dlrxq8y1qkkxn" path="res://graphics/other/icons/love-always-wins.png" id="6_klq6b"]
+[ext_resource type="PackedScene" uid="uid://0ue70hfjkguc" path="res://scenes/UI.tscn" id="5_ppgk2"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_mx8sn")
@@ -32,63 +31,7 @@ autostart = true
 
 [node name="bullets" type="Node2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -61.5
-offset_right = 61.5
-offset_bottom = 40.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_2r41h")
-theme_override_font_sizes/font_size = 32
-text = "00032"
-
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
-offset_right = 640.0
-offset_bottom = 128.0
-scale = Vector2(0.21925266, 0.23571323)
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
-z_index = 7
-layout_mode = 2
-texture = ExtResource("6_klq6b")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
-z_index = 7
-layout_mode = 2
-texture = ExtResource("6_klq6b")
-stretch_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
-z_index = 7
-layout_mode = 2
-texture = ExtResource("6_klq6b")
-stretch_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
-z_index = 7
-layout_mode = 2
-texture = ExtResource("6_klq6b")
-stretch_mode = 2
-
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/MarginContainer2/HBoxContainer"]
-z_index = 7
-layout_mode = 2
-texture = ExtResource("6_klq6b")
-stretch_mode = 2
+[node name="CanvasLayer" parent="." instance=ExtResource("5_ppgk2")]
 
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]
