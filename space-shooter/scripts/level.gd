@@ -9,5 +9,6 @@ func _on_meteor_timer_timeout() -> void:
 
 func _on_player_bullet(pos) -> void:
 	var bullet = bullet_scene.instantiate()
+	bullet.rotation = -$Player.rotation
 	$bullets.add_child(bullet)
 	bullet.position = pos

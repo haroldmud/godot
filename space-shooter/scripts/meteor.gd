@@ -6,6 +6,8 @@ var rotation_speed: float
 #var direction := Vector2.DOWN
 @onready var meteor: Node2D = $"."
 @onready var asteroid: Sprite2D = $Asteroid
+var backToNormal := true
+var player_reference: Node2D = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
@@ -17,21 +19,39 @@ func _ready() -> void:
 	direction_x = rng.randi_range(-1, 1)
 	rotation_speed  = rng.randi_range(1, 10)
 	SPEED = rng.randi_range(100, 200)
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position += Vector2.DOWN *  SPEED * delta
 	asteroid.rotate(rotation_speed * delta)
 	position += Vector2(direction_x, 1)
+	if collision_counter > 5:
+		player_reference.visible = false
+	
 
 
-
+var collision_counter := 0
 func _on_body_entered(body: Node2D) -> void:
-	print("the collision has happenned") # Replace with function body.
-	body.rotation += 2.0 
-
+	body.rotation += 1.0
+	backToNormal = false
+	player_reference = body
+	collision_counter += 1
+	if body.has_node("PlayerImage") and body.has_node("PlayerImageFail") and backToNormal == false:
+		body.get_node("PlayerImage").visible = false
+		body.get_node("PlayerImageFail").visible = true
+		print("normal:", backToNormal)
+		$MeteorCollisionTimer.start()
+	
 
 func _on_area_entered(area: Area2D) -> void:
 	print("the laser has been shot")
 	asteroid.visible = false
+
+
+func _on_meteor_collision_timer_timeout() -> void:
+	backToNormal = true
+	print("about now normal:", backToNormal)
+	
+	if player_reference.has_node("PlayerImage") and player_reference.has_node("PlayerImageFail") and backToNormal == true:
+		player_reference.get_node("PlayerImage").visible = true
+		player_reference.get_node("PlayerImageFail").visible = false
