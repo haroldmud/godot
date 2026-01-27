@@ -41,12 +41,10 @@ func _on_body_entered(body: Node2D) -> void:
 		body.get_node("PlayerImageFail").visible = true
 		print("normal:", backToNormal)
 		$MeteorCollisionTimer.start()
-	
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(_area: Area2D) -> void:
 	print("the laser has been shot")
 	asteroid.visible = false
-
 
 func _on_meteor_collision_timer_timeout() -> void:
 	backToNormal = true
