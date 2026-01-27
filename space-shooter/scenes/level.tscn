@@ -30,5 +30,20 @@ autostart = true
 
 [node name="bullets" type="Node2D" parent="."]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -21.5
+offset_right = 21.5
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+text = "Score"
+
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]
