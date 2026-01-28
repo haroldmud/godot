@@ -4,6 +4,9 @@ var meteor_scene: PackedScene = load("res://scenes/meteor.tscn")
 var bullet_scene: PackedScene = load("res://scenes/bullet.tscn")
 var health  := 5
 
+func _ready():
+	get_tree().call_group('ui', 'set_health', health)
+
 func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
 	$meteors.add_child(meteor)
@@ -18,7 +21,7 @@ func _on_player_bullet(pos) -> void:
 func _on_meteor_collision() -> void:
 	if health > 0:
 		health -= 1
-		get_tree().call_group('ui', 'SSt_health', health)
+		get_tree().call_group('ui', 'set_health', health)
 	elif health == 0:
-		print("the player should die at this point")
+		$Player.visible = false
 		

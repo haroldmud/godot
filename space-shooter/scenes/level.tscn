@@ -33,7 +33,6 @@ autostart = true
 [node name="bullets" type="Node2D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("5_ppgk2")]
-visible = false
 
 [node name="GameOverUI" parent="." instance=ExtResource("6_2r41h")]
 visible = false
