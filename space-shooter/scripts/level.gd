@@ -18,7 +18,7 @@ func _on_player_bullet(pos) -> void:
 func _on_meteor_collision() -> void:
 	if health > 0:
 		health -= 1
-		print(health)
+		get_tree().call_group('ui', 'SSt_health', health)
 	elif health == 0:
 		print("the player should die at this point")
 		
