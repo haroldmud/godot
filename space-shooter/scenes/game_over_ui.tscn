@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://vr1qt33kmj7n"]
+
+[ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://graphics/other/fonts/subatomic.tsoonami.ttf" id="1_ovv0w"]
+
+[node name="GameOverUI" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22745098, 0.18039216, 0.24705882, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0146958, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="gameOVer" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ovv0w")
+theme_override_font_sizes/font_size = 54
+text = "GAME OVER"
+
+[node name="yourScore" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ovv0w")
+theme_override_font_sizes/font_size = 24
+text = "YOUR SCORE: 0"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 388.0
+offset_top = 473.0
+offset_right = 764.0
+offset_bottom = 511.0
+theme_override_constants/margin_bottom = 10
+
+[node name="spaceToStart" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ovv0w")
+theme_override_font_sizes/font_size = 20
+text = "SPACE TO START AGAIN"

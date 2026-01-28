@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbyp1xwa5d3e1"]
+[gd_scene load_steps=7 format=3 uid="uid://cbyp1xwa5d3e1"]
 
 [ext_resource type="Script" uid="uid://df2po7qljpmrc" path="res://scripts/level.gd" id="1_mx8sn"]
 [ext_resource type="Texture2D" uid="uid://ch54yinbyorod" path="res://graphics/other/bg.webp" id="1_w8frs"]
 [ext_resource type="PackedScene" uid="uid://wps0hpecyxnr" path="res://scenes/player.tscn" id="2_mx8sn"]
 [ext_resource type="PackedScene" uid="uid://cyqqgordmh7pa" path="res://scenes/meteor.tscn" id="3_ppgk2"]
 [ext_resource type="PackedScene" uid="uid://0ue70hfjkguc" path="res://scenes/UI.tscn" id="5_ppgk2"]
+[ext_resource type="PackedScene" uid="uid://vr1qt33kmj7n" path="res://scenes/game_over_ui.tscn" id="6_2r41h"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_mx8sn")
@@ -31,7 +32,12 @@ autostart = true
 
 [node name="bullets" type="Node2D" parent="."]
 
-[node name="CanvasLayer" parent="." instance=ExtResource("5_ppgk2")]
+[node name="UI" parent="." instance=ExtResource("5_ppgk2")]
+visible = false
+
+[node name="GameOverUI" parent="." instance=ExtResource("6_2r41h")]
+visible = false
 
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
+[connection signal="collision" from="Meteor" to="." method="_on_meteor_collision"]
 [connection signal="timeout" from="Timer" to="." method="_on_meteor_timer_timeout"]

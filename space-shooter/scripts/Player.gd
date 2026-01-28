@@ -78,7 +78,7 @@ func keep_player_inside_screen() -> void:
 	var half_size: Vector2 = (playerNode.texture.get_size() * playerNode.scale) / 2
 	position.x = clamp(position.x, half_size.x/4, screen_size.x - (half_size.x)/4)
 	position.y = clamp(position.y, half_size.y/4, screen_size.y - (half_size.y)/4)
-
+	
 
 
 func _on_bullet_timer_timeout() -> void: # Turning on the One shot will ensure the operation to start over instead of going through a loop
