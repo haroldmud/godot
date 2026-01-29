@@ -2,7 +2,6 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func set_health(health_amount):
-	print("heath:", health_amount)
 	for child in $MarginContainer2/HBoxContainer.get_children():
 		child.queue_free()
 	for i in health_amount:
