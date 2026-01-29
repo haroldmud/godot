@@ -7,6 +7,7 @@ var health  := 5
 func _ready():
 	get_tree().call_group('ui', 'set_health', health)
 
+
 func _on_meteor_timer_timeout() -> void:
 	var meteor = meteor_scene.instantiate()
 	$meteors.add_child(meteor)
@@ -22,6 +23,5 @@ func _on_meteor_collision() -> void:
 	if health > 0:
 		health -= 1
 		get_tree().call_group('ui', 'set_health', health)
-	elif health == 0:
-		$Player.visible = false
-		
+	elif health <= 0:
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")

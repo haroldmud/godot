@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	position += Vector2(direction_x, 1)
 	if collision_counter > 5:
 		player_reference.visible = false
-
+		
 var collision_counter := 0
 var scoring_collision := 0
 func _on_body_entered(body: Node2D) -> void:
@@ -49,8 +49,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_area_entered(_area: Area2D) -> void:
 	asteroid.visible = false
 	meteorCollider.set_deferred("disabled", true)
-	scoring_collision += 1
-	print(scoring_collision)
+	if scoring_collision > 0:
+		get_tree().call_group('ui', 'set_score', scoring_collision)
 
 func _on_meteor_collision_timer_timeout() -> void:
 	backToNormal = true
