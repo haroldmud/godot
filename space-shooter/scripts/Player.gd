@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 const SPEED = 500.0
-
 var direction := Vector2.RIGHT
 var scale_multiplier := 1.2
 var scale_speed := 8.0

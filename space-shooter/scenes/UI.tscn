@@ -31,3 +31,13 @@ theme_override_constants/margin_top = 5
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 0
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="TotalScoreTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="TotalScoreTimer" to="." method="_on_total_score_timer_timeout"]
