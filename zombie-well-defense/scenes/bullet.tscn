@@ -3,17 +3,19 @@
 [ext_resource type="Script" uid="uid://rvrodd4trf1l" path="res://zombie-well-defense/scenes/bullet.gd" id="1_51b2r"]
 [ext_resource type="Texture2D" uid="uid://ldt0ivmmcjqk" path="res://zombie-survival/other/flying_bullet.png" id="1_d46qk"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d46qk"]
-radius = 110.96506
-height = 766.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_51b2r"]
+radius = 133.32297
+height = 666.6149
 
 [node name="bullet" type="Area2D"]
 script = ExtResource("1_51b2r")
 
 [node name="BulletImage" type="Sprite2D" parent="."]
+scale = Vector2(0.015, 0.015)
 texture = ExtResource("1_d46qk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(400, -35)
-rotation = 1.5756048
-shape = SubResource("CapsuleShape2D_d46qk")
+position = Vector2(8, -1)
+rotation = -1.5832494
+scale = Vector2(0.015, 0.015)
+shape = SubResource("CapsuleShape2D_51b2r")
