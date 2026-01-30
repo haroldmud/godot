@@ -15,12 +15,10 @@ func set_health(health_amount):
 func set_score(score_value := 1):
 	score += score_value
 
-
 func _on_score_timer_timeout() -> void:
 	timeElapsed += 1
-	
-
 
 func _on_total_score_timer_timeout() -> void:
 	total_score = timeElapsed + score
-	$MarginContainer/Label.text = str(total_score)
+	$MarginContainer/Label.text = "000"+ str(total_score)
+	Global.score = total_score

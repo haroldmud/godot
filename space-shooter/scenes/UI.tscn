@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://0ue70hfjkguc"]
 
-[ext_resource type="Script" uid="uid://6ltvkpoycl4j" path="res://scenes/ui.gd" id="1_5en4g"]
+[ext_resource type="Script" uid="uid://6ltvkpoycl4j" path="res://scripts/ui.gd" id="1_5en4g"]
 [ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://graphics/other/fonts/subatomic.tsoonami.ttf" id="1_ro3t7"]
 
 [node name="CanvasLayer" type="CanvasLayer" groups=["ui"]]
@@ -19,7 +19,7 @@ grow_horizontal = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ro3t7")
 theme_override_font_sizes/font_size = 32
-text = "00032"
+text = "0000"
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 offset_right = 640.0
