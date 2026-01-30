@@ -6,6 +6,7 @@
 
 [node name="Player" type="CharacterBody2D"]
 rotation = -1.5924759
+collision_mask = 2
 script = ExtResource("1_iiok3")
 
 [node name="PlayerImage" type="Sprite2D" parent="."]

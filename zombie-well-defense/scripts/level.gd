@@ -18,7 +18,9 @@ func _on_zombies_spawn_timer_timeout() -> void:
 	$Zombies.add_child(zombie)
 
 
-func _on_player_bullet(pos: Variant) -> void:
+func _on_player_bullet(pos: Variant, rot: Variant) -> void:
 	var bullet = bullet_scene.instantiate()
-	$bullets.add_child(bullet)
+	bullet.rotation = rot
+	bullet.direction = Vector2.UP.rotated(rot - deg_to_rad(-95))
 	bullet.position = pos
+	$bullets.add_child(bullet)
