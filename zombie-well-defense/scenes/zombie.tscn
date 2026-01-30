@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ge7tdvmuxmw4"]
+
+[ext_resource type="Script" uid="uid://ca54payfxb27e" path="res://scripts/zombie.gd" id="1_a51gf"]
+[ext_resource type="Texture2D" uid="uid://drqw26ry8ugss" path="res://zombie-survival/graphics/zombie.png" id="1_uiaus"]
+[ext_resource type="Texture2D" uid="uid://bis57x7hdcuru" path="res://zombie-survival/other/blood.png" id="3_xepks"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_roy8y"]
+radius = 89.0
+height = 178.0
+
+[node name="Zombie" type="Area2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_a51gf")
+
+[node name="ZombieImage" type="Sprite2D" parent="."]
+position = Vector2(10, 19)
+rotation = 1.5705823
+texture = ExtResource("1_uiaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 18)
+shape = SubResource("CapsuleShape2D_roy8y")
+
+[node name="Blood" type="Sprite2D" parent="."]
+scale = Vector2(0.36, 0.36)
+texture = ExtResource("3_xepks")
+
+[node name="BloodTimer" type="Timer" parent="."]
+wait_time = 3.516
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="BloodTimer" to="." method="_on_blood_timer_timeout"]

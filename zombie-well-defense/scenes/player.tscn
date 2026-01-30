@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://df5lifdsjiber"]
+
+[ext_resource type="Texture2D" uid="uid://dmvasbkig6jhy" path="res://zombie-survival/graphics/soldier.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dwqomhho8f6rr" path="res://scripts/player.gd" id="1_iiok3"]
+[ext_resource type="Texture2D" uid="uid://mrsu1ws3kc8h" path="res://zombie-survival/other/muzzle_flash.png" id="3_3eq61"]
+[ext_resource type="Texture2D" uid="uid://bis57x7hdcuru" path="res://zombie-survival/other/blood.png" id="4_dqkch"]
+
+[node name="Player" type="CharacterBody2D"]
+rotation = -1.5924759
+collision_mask = 10
+script = ExtResource("1_iiok3")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-21.255203, 11.541946)
+scale = Vector2(1.0000001, 1.0000001)
+polygon = PackedVector2Array(-73.68171, -61.611744, -96.088425, -43.093124, -100.78117, -11.187351, -96.129196, 4.91728, -102.88651, 39.77899, -82.5201, 69.22742, -50.657684, 75.9197, -15.622551, 74.67889, 14.717249, 59.332985, 31.691578, 60.70127, 46.883156, 52.02856, 61.87963, 52.353725, 88.65652, 62.936676, 108.97698, 48.373756, 172.24396, 36.742508, 98.73829, 13.143524, 87.17467, -7.111912, 67.69963, -31.539831, 38.9449, -43.165905, 14.015808, -46.70715, 2.4305058, -65.962814, -11.306068, -78.26349, -28.302078, -78.63201, -52.318115, -78.15252)
+
+[node name="BulletStartPos" type="Marker2D" parent="."]
+position = Vector2(182.00317, 47.956715)
+
+[node name="MuzzleFlash" type="Sprite2D" parent="."]
+position = Vector2(178.93884, 50.890972)
+rotation = -0.05584781
+scale = Vector2(0.36798027, 0.34475848)
+texture = ExtResource("3_3eq61")
+
+[node name="Blood" type="Sprite2D" parent="."]
+texture = ExtResource("4_dqkch")
