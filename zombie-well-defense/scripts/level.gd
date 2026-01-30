@@ -1,7 +1,7 @@
 extends Node2D
 
 var zombie_scene: PackedScene = load("res://zombie-well-defense/scenes/zombie.tscn")
-var target_size := Vector2(132, 132)
+var target_size := Vector2(148, 148)
 
 func _ready() -> void:
 	pass
