@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu7tw10dwcxn0"]
+[gd_scene load_steps=6 format=3 uid="uid://cu7tw10dwcxn0"]
 
 [ext_resource type="Texture2D" uid="uid://cytcrxk34gqiy" path="res://zombie-survival/graphics/night-env.png" id="1_gc311"]
+[ext_resource type="Script" uid="uid://ejxvx1xslrrd" path="res://zombie-well-defense/scripts/level.gd" id="1_oond3"]
 [ext_resource type="PackedScene" uid="uid://df5lifdsjiber" path="res://zombie-well-defense/scenes/player.tscn" id="2_5f57p"]
 [ext_resource type="PackedScene" uid="uid://bqwckd2tmqwji" path="res://zombie-well-defense/scenes/well.tscn" id="2_v1lpt"]
 [ext_resource type="PackedScene" uid="uid://ge7tdvmuxmw4" path="res://zombie-well-defense/scenes/zombie.tscn" id="3_v1lpt"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_oond3")
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(574, 321)
@@ -26,3 +28,8 @@ position = Vector2(234, 70)
 scale = Vector2(0.5, 0.5)
 
 [node name="Zombies" type="Node2D" parent="."]
+
+[node name="ZombiesSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="ZombiesSpawnTimer" to="." method="_on_zombies_spawn_timer_timeout"]
