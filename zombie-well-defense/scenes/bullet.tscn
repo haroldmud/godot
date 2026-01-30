@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxkgj62pry1bj"]
+
+[ext_resource type="Texture2D" uid="uid://ldt0ivmmcjqk" path="res://zombie-survival/other/flying_bullet.png" id="1_d46qk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d46qk"]
+radius = 110.96506
+height = 766.0
+
+[node name="bullet" type="Area2D"]
+
+[node name="BulletImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_d46qk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(400, -35)
+rotation = 1.5756048
+shape = SubResource("CapsuleShape2D_d46qk")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://df5lifdsjiber"]
+
+[ext_resource type="Texture2D" uid="uid://dmvasbkig6jhy" path="res://zombie-survival/graphics/soldier.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dwqomhho8f6rr" path="res://zombie-well-defense/scripts/player.gd" id="1_iiok3"]
+
+[node name="Player" type="CharacterBody2D"]
+rotation = -1.5924759
+script = ExtResource("1_iiok3")
+
+[node name="PlayerImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_4flbx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -83, 25, -76, 39, -62, 61, -43, 67, -33, 73, -24, 76, -14, 82, 4, 78, 8, 77, 24, 75, 28, 78, 38, 68, 72, 63, 95, 57, 98, 55, 104, 45, 105, 40, 102, 35, 102, 28, 88, 27, 76, 15, 66, -9, 62, -26, 68, -36, 77, -34, 90, -42, 105, -50, 109)
