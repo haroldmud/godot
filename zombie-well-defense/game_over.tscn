@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://clqyopc0mxep4"]
+[gd_scene load_steps=4 format=3 uid="uid://clqyopc0mxep4"]
 
+[ext_resource type="Script" uid="uid://b3sg6vcewfoqi" path="res://game_over.gd" id="1_ccer4"]
 [ext_resource type="Texture2D" uid="uid://brp218t2tihu0" path="res://zombie-survival/other/environment.png" id="1_yxx3c"]
 [ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://zombie-survival/fonts/subatomic.tsoonami.ttf" id="2_ccer4"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ccer4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

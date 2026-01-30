@@ -79,5 +79,6 @@ texture = ExtResource("7_klq6b")
 layout_mode = 2
 texture = ExtResource("7_klq6b")
 
+[connection signal="collision" from="Zombie" to="." method="_on_zombie_collision"]
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
 [connection signal="timeout" from="ZombiesSpawnTimer" to="." method="_on_zombies_spawn_timer_timeout"]

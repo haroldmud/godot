@@ -7,6 +7,7 @@ var SPEED : float
 @export var target: StaticBody2D
 var player_blood : Sprite2D
 var deaths := 0
+signal collision
 
 func _ready() -> void:
 	var rng = RandomNumberGenerator.new()
@@ -29,7 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_node("Blood"):
 		body.get_node("Blood").visible = true
 		body.global_position = -Vector2(0, 0)
-		deaths += 1
+		collision.emit()
 	
 	if body.has_node("WellImage"):
 		print("the well has been contaminated")
@@ -45,5 +46,4 @@ func _on_blood_timer_timeout() -> void:
 	if player_blood:
 		player_blood.visible = false
 	player_blood = null
-	print(deaths)
 	
