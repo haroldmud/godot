@@ -45,4 +45,5 @@ func _on_blood_timer_timeout() -> void:
 	if player_blood:
 		player_blood.visible = false
 	player_blood = null
+	print(deaths)
 	
