@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu7tw10dwcxn0"]
+
+[ext_resource type="Texture2D" uid="uid://cytcrxk34gqiy" path="res://zombie-survival/graphics/night-env.png" id="1_gc311"]
+[ext_resource type="PackedScene" uid="uid://df5lifdsjiber" path="res://zombie-well-defense/player.tscn" id="2_5f57p"]
+[ext_resource type="PackedScene" uid="uid://ge7tdvmuxmw4" path="res://zombie.tscn" id="3_v1lpt"]
+
+[node name="Level" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(565.75, 318)
+scale = Vector2(1.2005128, 1.1888112)
+texture = ExtResource("1_gc311")
+
+[node name="Player" parent="." instance=ExtResource("2_5f57p")]
+position = Vector2(534, 510.00006)
+rotation = -1.6739453
+scale = Vector2(0.5, 0.5)
+
+[node name="Zombie" parent="." instance=ExtResource("3_v1lpt")]
+position = Vector2(234, 70)
+scale = Vector2(0.5, 0.5)

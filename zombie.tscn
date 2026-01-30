@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ge7tdvmuxmw4"]
+
+[ext_resource type="Texture2D" uid="uid://drqw26ry8ugss" path="res://zombie-survival/graphics/zombie.png" id="1_uiaus"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_roy8y"]
+radius = 89.0
+height = 178.0
+
+[node name="Zombie" type="Area2D"]
+
+[node name="ZombieImage" type="Sprite2D" parent="."]
+position = Vector2(10, 19)
+rotation = 1.5705823
+texture = ExtResource("1_uiaus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 18)
+shape = SubResource("CapsuleShape2D_roy8y")
