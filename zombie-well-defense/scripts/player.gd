@@ -4,6 +4,7 @@ var SPEED := 4
 var rotation_speed := 8.0
 var target_rotation = 0.0
 var base_rotation := deg_to_rad(-90)
+signal bullet(pos)
 
 func _ready() -> void:
 	$MuzzleFlash.visible = false
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 		target_rotation = 0.0
 		
 	if Input.is_action_just_pressed("ui_accept"):
+		bullet.emit($BulletStartPos.global_position)
 		$MuzzleFlash.visible = true
 	else:
 		$MuzzleFlash.visible = false

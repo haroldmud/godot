@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxkgj62pry1bj"]
+[gd_scene load_steps=4 format=3 uid="uid://bxkgj62pry1bj"]
 
+[ext_resource type="Script" uid="uid://rvrodd4trf1l" path="res://zombie-well-defense/scenes/bullet.gd" id="1_51b2r"]
 [ext_resource type="Texture2D" uid="uid://ldt0ivmmcjqk" path="res://zombie-survival/other/flying_bullet.png" id="1_d46qk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d46qk"]
@@ -7,6 +8,7 @@ radius = 110.96506
 height = 766.0
 
 [node name="bullet" type="Area2D"]
+script = ExtResource("1_51b2r")
 
 [node name="BulletImage" type="Sprite2D" parent="."]
 texture = ExtResource("1_d46qk")
