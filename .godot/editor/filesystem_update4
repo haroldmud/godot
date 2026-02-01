@@ -1,0 +1,11 @@
+res://zombie-well-defense/level.tscn
+res://zombie-well-defense/scenes/player.tscn
+res://zombie-well-defense/scripts/player.gd
+res://zombie-well-defense/scenes/level.tscn
+res://zombie-well-defense/scenes/bullet.tscn
+res://zombie-well-defense/scenes/level.gd
+res://zombie-well-defense/scenes/zombie.tscn
+res://zombie-well-defense/scenes/zombie.gd
+res://zombie-well-defense/scripts/level.gd
+res://zombie-well-defense/scenes/bullet.gd
+res://zombie-well-defense/scripts/zombie.gd
