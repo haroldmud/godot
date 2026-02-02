@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://pvf5p8j6m2ny"]
+
+[ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://zombie-survival/fonts/subatomic.tsoonami.ttf" id="1_x4jx1"]
+[ext_resource type="Script" uid="uid://oifns6do3dbu" path="res://scripts/ui.gd" id="1_yev5y"]
+[ext_resource type="Texture2D" uid="uid://dlrxq8y1qkkxn" path="res://zombie-survival/icons/love-always-wins.png" id="2_yev5y"]
+
+[node name="ui" type="CanvasLayer" groups=["ui"]]
+script = ExtResource("1_yev5y")
+
+[node name="score" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.5
+offset_right = 37.5
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_x4jx1")
+theme_override_font_sizes/font_size = 24
+text = "0000
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 656.0
+offset_bottom = 128.0
+scale = Vector2(0.3154885, 0.33971325)
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yev5y")
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yev5y")
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yev5y")
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yev5y")
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_yev5y")

@@ -24,9 +24,9 @@ func _on_player_bullet(pos: Variant, rot: Variant) -> void:
 	bullet.position = pos
 	$bullets.add_child(bullet)
 
-
 func _on_zombie_collision() -> void:
 	if health > 0:
 		health -= 1
+		get_tree().call_group("ui", "set_health", health)
 	elif health <= 0:
 		get_tree().change_scene_to_file("res://game_over.tscn")
