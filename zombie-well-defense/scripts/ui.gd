@@ -17,4 +17,3 @@ func set_score_per_killed_zombie(killed_zombie :=1):
 func _on_score_timer_timeout() -> void:
 	score += 5
 	Global.score = score
-	print("the score is ", Global.score)

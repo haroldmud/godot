@@ -70,3 +70,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ccer4")
 theme_override_font_sizes/font_size = 16
 text = "Click on space or Enter to Restart"
+
+[node name="GameOverTimer" type="Timer" parent="."]
+wait_time = 1.7489999999999999
+autostart = true
+
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

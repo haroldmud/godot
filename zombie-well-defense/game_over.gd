@@ -5,4 +5,4 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://scenes/level.tscn")
 
-	$CenterContainer/VBoxContainer/score.text = "YOUR SCORE IS " + str(Global.score)
+	$CenterContainer/VBoxContainer/score.text = "YOUR SCORE: " + str(Global.score)
