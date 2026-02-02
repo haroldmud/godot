@@ -13,8 +13,8 @@ func set_health(health_amount):
 func set_score_per_killed_zombie(killed_zombie :=1):
 	score += killed_zombie
 	$score.text = "000" + str(score)
-	
 
 func _on_score_timer_timeout() -> void:
-	score = 5
-	print("the score is now: ", score)
+	score += 5
+	Global.score = score
+	print("the score is ", Global.score)

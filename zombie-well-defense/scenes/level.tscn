@@ -39,9 +39,6 @@ autostart = true
 
 [node name="ui" parent="." instance=ExtResource("6_2r41h")]
 
-[node name="ScoreTimer" type="Timer" parent="ui"]
-
 [connection signal="collision" from="Zombie" to="." method="_on_zombie_collision"]
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]
 [connection signal="timeout" from="ZombiesSpawnTimer" to="." method="_on_zombies_spawn_timer_timeout"]
-[connection signal="timeout" from="ui/ScoreTimer" to="." method="_on_score_timer_timeout"]
