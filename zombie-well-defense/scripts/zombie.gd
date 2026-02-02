@@ -40,6 +40,7 @@ func _on_area_entered(area: Area2D) -> void:
 	$Blood.visible = true
 	$CollisionShape2D.set_deferred("disabled", true)
 	area.visible = false
+	get_tree().call_group("ui", "set_score_per_killed_zombie", 1)
 
 func _on_blood_timer_timeout() -> void:
 	$Blood.visible = false

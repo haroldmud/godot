@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://pvf5p8j6m2ny"]
+[gd_scene load_steps=3 format=3 uid="uid://pvf5p8j6m2ny"]
 
 [ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://zombie-survival/fonts/subatomic.tsoonami.ttf" id="1_x4jx1"]
 [ext_resource type="Script" uid="uid://oifns6do3dbu" path="res://scripts/ui.gd" id="1_yev5y"]
-[ext_resource type="Texture2D" uid="uid://dlrxq8y1qkkxn" path="res://zombie-survival/icons/love-always-wins.png" id="2_yev5y"]
 
 [node name="ui" type="CanvasLayer" groups=["ui"]]
 script = ExtResource("1_yev5y")
@@ -26,22 +25,8 @@ offset_bottom = 128.0
 scale = Vector2(0.3154885, 0.33971325)
 theme_override_constants/separation = 0
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_yev5y")
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_yev5y")
-
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_yev5y")
-
-[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_yev5y")
-
-[node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_yev5y")
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
