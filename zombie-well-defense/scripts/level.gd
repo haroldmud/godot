@@ -6,6 +6,9 @@ var zombie_size := Vector2(148, 148)
 @export var well:= StaticBody2D
 var health := 5
 
+func _ready():
+	get_tree().call_group("ui", "set_health", health)
+
 func _on_zombies_spawn_timer_timeout() -> void:
 	var zombie = zombie_scene.instantiate()
 	var sprite := zombie.get_node("ZombieImage")
@@ -24,9 +27,9 @@ func _on_player_bullet(pos: Variant, rot: Variant) -> void:
 	bullet.position = pos
 	$bullets.add_child(bullet)
 
-
 func _on_zombie_collision() -> void:
 	if health > 0:
 		health -= 1
-	elif health <= 0:
+		get_tree().call_group("ui", "set_health", health)
+	elif health < 1:
 		get_tree().change_scene_to_file("res://game_over.tscn")

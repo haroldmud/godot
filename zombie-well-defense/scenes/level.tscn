@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu7tw10dwcxn0"]
+[gd_scene load_steps=7 format=3 uid="uid://cu7tw10dwcxn0"]
 
 [ext_resource type="Texture2D" uid="uid://cytcrxk34gqiy" path="res://zombie-survival/graphics/night-env.png" id="1_gc311"]
 [ext_resource type="Script" uid="uid://ejxvx1xslrrd" path="res://scripts/level.gd" id="1_oond3"]
 [ext_resource type="PackedScene" uid="uid://df5lifdsjiber" path="res://scenes/player.tscn" id="2_5f57p"]
 [ext_resource type="PackedScene" uid="uid://bqwckd2tmqwji" path="res://scenes/well.tscn" id="2_v1lpt"]
 [ext_resource type="PackedScene" uid="uid://ge7tdvmuxmw4" path="res://scenes/zombie.tscn" id="3_v1lpt"]
-[ext_resource type="FontFile" uid="uid://dkejb8xpgxyl0" path="res://zombie-survival/fonts/subatomic.tsoonami.ttf" id="6_2r41h"]
-[ext_resource type="Texture2D" uid="uid://dlrxq8y1qkkxn" path="res://zombie-survival/icons/love-always-wins.png" id="7_klq6b"]
+[ext_resource type="PackedScene" uid="uid://pvf5p8j6m2ny" path="res://scenes/ui.tscn" id="6_2r41h"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("well")]
 script = ExtResource("1_oond3")
@@ -38,46 +37,7 @@ autostart = true
 
 [node name="bullets" type="Node2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="score" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -37.5
-offset_right = 37.5
-offset_bottom = 45.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_2r41h")
-theme_override_font_sizes/font_size = 24
-text = "0000
-"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-offset_right = 656.0
-offset_bottom = 128.0
-scale = Vector2(0.3154885, 0.33971325)
-theme_override_constants/separation = 0
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_klq6b")
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_klq6b")
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_klq6b")
-
-[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_klq6b")
-
-[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("7_klq6b")
+[node name="ui" parent="." instance=ExtResource("6_2r41h")]
 
 [connection signal="collision" from="Zombie" to="." method="_on_zombie_collision"]
 [connection signal="bullet" from="Player" to="." method="_on_player_bullet"]

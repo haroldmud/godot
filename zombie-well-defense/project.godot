@@ -14,6 +14,10 @@ config/name="Zombie Well Defense"
 run/main_scene="uid://cu7tw10dwcxn0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+Global="*res://global/global.gd"
+
 [input]
 
 move_left={

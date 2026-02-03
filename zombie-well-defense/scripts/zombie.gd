@@ -15,7 +15,7 @@ func _ready() -> void:
 	var randomX = rng.randi_range(0, width)
 	var randomY = rng.randi_range(-15, -130)
 	position = Vector2(randomX, randomY)
-	SPEED = rng.randf_range(100, 120)
+	SPEED = rng.randf_range(120, 150)
 	$Blood.visible = false
 
 func _process(delta: float) -> void:
@@ -33,13 +33,14 @@ func _on_body_entered(body: Node2D) -> void:
 		collision.emit()
 	
 	if body.has_node("WellImage"):
-		print("the well has been contaminated")
+		get_tree().change_scene_to_file("res://game_over.tscn")
 
 func _on_area_entered(area: Area2D) -> void:
 	$ZombieImage.visible = false
 	$Blood.visible = true
 	$CollisionShape2D.set_deferred("disabled", true)
 	area.visible = false
+	get_tree().call_group("ui", "set_score_per_killed_zombie", 1)
 
 func _on_blood_timer_timeout() -> void:
 	$Blood.visible = false
