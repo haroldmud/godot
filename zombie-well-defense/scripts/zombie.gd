@@ -1,10 +1,10 @@
 extends Area2D
 
+@export var target: StaticBody2D
 var walk_time := 0.0
 var walk_amount := deg_to_rad(5)
 var walk_speed := 6.0
 var SPEED : float
-@export var target: StaticBody2D
 var player_blood : Sprite2D
 var deaths := 0
 signal collision
@@ -27,13 +27,16 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	player_blood = body.get_node("Blood")
+	var screen_size = get_viewport_rect().size
 	if body.has_node("Blood"):
 		body.get_node("Blood").visible = true
-		body.global_position = -Vector2(0, 0)
+		body.global_position = Vector2(screen_size.x/3, screen_size.y/1.5)
+		
 		collision.emit()
 	
 	if body.has_node("WellImage"):
 		get_tree().change_scene_to_file("res://game_over.tscn")
+		Global.is_well_contaminated = true
 
 func _on_area_entered(area: Area2D) -> void:
 	$ZombieImage.visible = false
