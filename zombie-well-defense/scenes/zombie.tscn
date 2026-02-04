@@ -23,7 +23,9 @@ position = Vector2(-1, 18)
 shape = SubResource("CapsuleShape2D_roy8y")
 
 [node name="Blood" type="Sprite2D" parent="."]
-scale = Vector2(0.36, 0.36)
+position = Vector2(1.8999944, 9.399997)
+rotation = -0.847695
+scale = Vector2(0.49944443, 0.4577778)
 texture = ExtResource("3_xepks")
 
 [node name="BloodTimer" type="Timer" parent="."]
