@@ -38,6 +38,7 @@ mesh = SubResource("PlaneMesh_5xgho")
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_2q6dc")
 
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
