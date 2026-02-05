@@ -1,7 +1,7 @@
 extends RigidBody3D
 
 func _ready() -> void:
-	pass
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _process(delta: float) -> void:
@@ -10,3 +10,6 @@ func _process(delta: float) -> void:
 	direction.z = Input.get_axis("move_forward", "move_backward")
 	
 	apply_central_force(direction * 1200.0 * delta)
+	
+	if Input.is_action_just_pressed("ui_cancel"): # ESC key
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

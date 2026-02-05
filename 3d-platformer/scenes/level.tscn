@@ -31,9 +31,6 @@ environment = SubResource("Environment_w7c3h")
 transform = Transform3D(0.9218631, 0.009467853, -0.38740006, 0, 0.9997015, 0.024432179, 0.38751572, -0.022523124, 0.9215879, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 9.54127e-05, -0.00014603385, 0, 0.8371559, 0.5469644, 0.00017444044, -0.54696435, 0.8371559, 0.07341325, 2.1025271, 2.489252)
-
 [node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.6985899, 0, 0, 0, 1, 0.06887746, 0.005057335, -3.4317608)
 mesh = SubResource("PlaneMesh_5xgho")

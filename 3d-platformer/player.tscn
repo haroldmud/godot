@@ -9,6 +9,7 @@ points = PackedVector3Array(-3.2225854, 0.2575061, -1.2436308, -3.213337, 0.7094
 
 [node name="Player" type="RigidBody3D"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+top_level = true
 lock_rotation = true
 script = ExtResource("1_onrkg")
 
@@ -19,3 +20,10 @@ mesh = ExtResource("2_i3pqv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.37000003, 0, 0, 0, 0.37000003, 0, 0, 0, 0.37000003, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hqtel")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(0.043117613, 0.13479903, -0.9899344, -0.0058657564, 0.990873, 0.13467135, 0.9990528, 6.822694e-09, 0.04351477, -2.933506, 1.2732754, 0.008904329)
