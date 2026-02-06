@@ -15,14 +15,16 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	#
 	#apply_central_force(direction * 1200.0 * delta)
 	
-	var forward_input := Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
+	var forward_backward_input := Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
 	var steer_input := Input.get_action_strength("steer_right") - Input.get_action_strength("steer_left")
 	
-	if forward_input != 0.0 :
+	if forward_backward_input < 0.0 :
+		rotate_y(steer_input * steering_speed * state.step)
+	elif forward_backward_input > 0.0 :
 		rotate_y(-steer_input * steering_speed * state.step)
 	
 	var forward_direction = global_transform.basis.x
-	apply_central_force(forward_direction * forward_input * engine_force)
+	apply_central_force(forward_direction * forward_backward_input * engine_force)
 	
 	if Input.is_action_just_pressed("ui_cancel"): # ESC key
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
