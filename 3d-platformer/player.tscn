@@ -10,7 +10,6 @@ points = PackedVector3Array(-3.2225854, 0.2575061, -1.2436308, -3.213337, 0.7094
 [node name="Player" type="RigidBody3D"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 top_level = true
-lock_rotation = true
 linear_damp = 2.0
 script = ExtResource("1_onrkg")
 

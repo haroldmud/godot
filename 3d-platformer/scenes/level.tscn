@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwu7jcihnkrmt"]
+[gd_scene load_steps=8 format=3 uid="uid://dwu7jcihnkrmt"]
 
 [ext_resource type="PackedScene" uid="uid://vw8h1q4uaabo" path="res://player.tscn" id="1_2q6dc"]
+[ext_resource type="PackedScene" uid="uid://b0x7jqg8ikenr" path="res://scenes/RaceTrack.tscn" id="2_w7c3h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
 sky_top_color = Color(0.70697314, 0.75986606, 0.83071184, 1)
@@ -17,10 +18,10 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5xgho"]
-size = Vector2(10, 10)
+size = Vector2(70, 120)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2q6dc"]
-data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w7c3h"]
+points = PackedVector3Array(-35.95238, -0.952381, -60.952385, 36.42857, 0.952381, 60.952385, 36.42857, -0.952381, 60.952385, 36.42857, 0.952381, -60.952385, -35.95238, 0.952381, 60.952385, -35.95238, -0.952381, 60.952385, 36.42857, -0.952381, -60.952385, -35.95238, 0.952381, -60.952385)
 
 [node name="Level" type="Node3D"]
 
@@ -31,14 +32,21 @@ environment = SubResource("Environment_w7c3h")
 transform = Transform3D(0.9218631, 0.009467853, -0.38740006, 0, 0.9997015, 0.024432179, 0.38751572, -0.022523124, 0.9215879, 0, 0, 0)
 shadow_enabled = true
 
+[node name="Track" parent="." instance=ExtResource("2_w7c3h")]
+transform = Transform3D(-8.138005e-07, 0, 18.617586, 0, 18.617586, 0, -18.617586, 0, -8.138005e-07, 42.500458, -1.52005, -144.3851)
+
+[node name="Area3D" type="Area3D" parent="Track"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/Area3D"]
+
 [node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.6985899, 0, 0, 0, 1, 0.06887746, 0.005057335, -3.4317608)
+transform = Transform3D(1, 0, 0, 0, 0.6985899, 0, 0, 0, 1, -4.0798635, -0.08445358, -39.593674)
 mesh = SubResource("PlaneMesh_5xgho")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane/StaticBody3D"]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-shape = SubResource("ConcavePolygonShape3D_2q6dc")
+shape = SubResource("ConvexPolygonShape3D_w7c3h")
 
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
+linear_damp = 1.0
