@@ -23,7 +23,6 @@ func update_label() -> void:
 	var minutes := int(time) / 60
 	var seconds := int(time) % 60
 	var milliseconds := int((time - int(time)) * 100)  # two digits for centiseconds
-
 	# Format with leading zeros
 	timer_label.text = str(minutes).pad_zeros(2) + ":" + str(seconds).pad_zeros(2) + ":" + str(milliseconds).pad_zeros(2)
 
@@ -40,3 +39,12 @@ func _on_start_timer_timeout() -> void:
 
 func _on_go_timer_timeout() -> void:
 	time_starter_label.text = ""
+
+func set_health(health_amount):
+	for child in $MarginContainer3/HBoxContainer.get_children():
+		child.queue_free()
+		
+	for i in health_amount:
+		var text_rect = TextureRect.new()
+		text_rect.texture = load("res://assets/icons/lighting.png")
+		$MarginContainer3/HBoxContainer.add_child(text_rect)
