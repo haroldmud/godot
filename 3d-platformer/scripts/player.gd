@@ -7,6 +7,8 @@ extends RigidBody3D
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	await get_tree().physics_frame
+	global_position.y = plane.global_position.y + 0.5
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var plane_mesh := plane.mesh as PlaneMesh

@@ -14,7 +14,7 @@ linear_damp = 2.0
 script = ExtResource("1_onrkg")
 
 [node name="PlayerMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.37, 0, 0, 0, 0.37, 0, 0, 0, 0.37, 0, 0, 0)
+transform = Transform3D(0.43543786, 0, 0, 0, 0.49749324, 0, 0, 0, 0.47254097, 0, 0, 0)
 mesh = ExtResource("2_i3pqv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
