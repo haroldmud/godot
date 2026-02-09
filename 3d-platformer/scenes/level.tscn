@@ -33,11 +33,7 @@ transform = Transform3D(0.9218631, 0.009467853, -0.38740006, 0, 0.9997015, 0.024
 shadow_enabled = true
 
 [node name="Track" parent="." instance=ExtResource("2_w7c3h")]
-transform = Transform3D(-8.138005e-07, 0, 18.617586, 0, 18.617586, 0, -18.617586, 0, -8.138005e-07, 42.500458, -1.52005, -144.3851)
-
-[node name="Area3D" type="Area3D" parent="Track"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Track/Area3D"]
+transform = Transform3D(-8.138005e-07, 0, 18.617586, 0, 18.617586, 0, -18.617586, 0, -8.138005e-07, 42.508827, -1.3893623, -144.30545)
 
 [node name="Plane" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.6985899, 0, 0, 0, 1, -4.0798635, -0.08445358, -39.593674)
