@@ -45,4 +45,5 @@ mesh = SubResource("PlaneMesh_5xgho")
 shape = SubResource("ConvexPolygonShape3D_w7c3h")
 
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
+transform = Transform3D(-4.371139e-08, 0, 1.2596147, 0, 1.149268, 0, -1, 0, -5.505951e-08, 0, -0.06176132, 0)
 linear_damp = 1.0
