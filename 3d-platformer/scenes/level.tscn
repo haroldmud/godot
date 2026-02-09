@@ -1,7 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwu7jcihnkrmt"]
+[gd_scene load_steps=11 format=3 uid="uid://dwu7jcihnkrmt"]
 
 [ext_resource type="PackedScene" uid="uid://vw8h1q4uaabo" path="res://player.tscn" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://b0x7jqg8ikenr" path="res://scenes/RaceTrack.tscn" id="2_w7c3h"]
+[ext_resource type="Script" uid="uid://tjkn4dg0irg0" path="res://scenes/canvas_layer.gd" id="3_mx8sn"]
+[ext_resource type="FontFile" uid="uid://br3vnrm4cqyno" path="res://assets/fonts/subatomic.tsoonami.ttf" id="3_w8frs"]
+[ext_resource type="Texture2D" uid="uid://dsdywjlmownkr" path="res://assets/icons/lighting.png" id="5_ppgk2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rd3vj"]
 sky_top_color = Color(0.70697314, 0.75986606, 0.83071184, 1)
@@ -47,3 +50,64 @@ shape = SubResource("ConvexPolygonShape3D_w7c3h")
 [node name="Player" parent="." instance=ExtResource("1_2q6dc")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.10406518, 0)
 linear_damp = 1.0
+
+[node name="canvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_mx8sn")
+
+[node name="MarginContainer" type="MarginContainer" parent="canvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.5
+offset_right = 82.5
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TimerLabel" type="Label" parent="canvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_w8frs")
+theme_override_font_sizes/font_size = 32
+text = "00:00:00"
+
+[node name="StartTimer" type="Timer" parent="canvasLayer"]
+wait_time = 3.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="canvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 300
+
+[node name="TimeStarter" type="Label" parent="canvasLayer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.43370283, 1.697393, 1.1241727, 1)
+theme_override_fonts/font = ExtResource("3_w8frs")
+theme_override_font_sizes/font_size = 56
+text = "0"
+
+[node name="GoTimer" type="Timer" parent="canvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="canvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5199994, 0.40000036)
+
+[node name="MarginContainer" type="MarginContainer" parent="canvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="canvasLayer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_ppgk2")
+
+[node name="HealthBar" type="TextureProgressBar" parent="canvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[connection signal="timeout" from="canvasLayer/StartTimer" to="canvasLayer" method="_on_start_timer_timeout"]
+[connection signal="timeout" from="canvasLayer/GoTimer" to="canvasLayer" method="_on_go_timer_timeout"]
