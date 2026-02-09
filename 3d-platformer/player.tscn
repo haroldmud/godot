@@ -18,7 +18,7 @@ transform = Transform3D(0.43543786, 0, 0, 0, 0.49749324, 0, 0, 0, 0.47254097, 0,
 mesh = ExtResource("2_i3pqv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.37000003, 0, 0, 0, 0.37000003, 0, 0, 0, 0.37000003, 0, 0, 0)
+transform = Transform3D(0.4508364, 0, 1.7763568e-15, 0, 0.50388473, 0, -1.7763568e-15, 0, 0.45676598, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_hqtel")
 
 [node name="TwistPivot" type="Node3D" parent="."]
